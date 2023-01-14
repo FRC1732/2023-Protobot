@@ -36,7 +36,7 @@ public final class DrivetrainConstants {
   public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 32;
   public static final double BACK_RIGHT_MODULE_STEER_OFFSET = 40.3335;
 
-  public static final int PIGEON_ID = 18; //FIXME: change to nav x
+  public static final int PIGEON_ID = 18; // FIXME: change to nav x
 
   // FIXME: update robot dimensions
 
@@ -45,7 +45,7 @@ public final class DrivetrainConstants {
    *
    * <p>Should be measured from center to center.
    */
-  public static final double TRACKWIDTH_METERS = 0.5207; 
+  public static final double TRACKWIDTH_METERS = 0.5207;
 
   /**
    * The front-to-back distance between the drivetrain wheels.

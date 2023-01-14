@@ -21,7 +21,6 @@ import frc.lib.team3061.gyro.GyroIO;
 import frc.lib.team3061.gyro.GyroIOPigeon2;
 import frc.lib.team3061.pneumatics.Pneumatics;
 import frc.lib.team3061.pneumatics.PneumaticsIO;
-import frc.lib.team3061.pneumatics.PneumaticsIORev;
 import frc.lib.team3061.swerve.SwerveModule;
 import frc.lib.team3061.swerve.SwerveModuleIO;
 import frc.lib.team3061.swerve.SwerveModuleIOSim;
@@ -29,7 +28,6 @@ import frc.lib.team3061.swerve.SwerveModuleIOTalonFX;
 import frc.lib.team3061.vision.Vision;
 import frc.lib.team3061.vision.VisionConstants;
 import frc.lib.team3061.vision.VisionIO;
-import frc.lib.team3061.vision.VisionIOPhotonVision;
 import frc.lib.team3061.vision.VisionIOSim;
 import frc.robot.Constants.Mode;
 import frc.robot.commands.FeedForwardCharacterization;
@@ -69,7 +67,7 @@ public class RobotContainer {
       switch (Constants.getRobot()) {
         case ROBOT_2023_PRESEASON:
           {
-            GyroIO gyro = new GyroIOPigeon2(PIGEON_ID);
+            GyroIO gyro = new GyroIOPigeon2(PIGEON_ID); // FIXME: switch to nav x
 
             SwerveModule flModule =
                 new SwerveModule(
@@ -116,8 +114,8 @@ public class RobotContainer {
                     MAX_VELOCITY_METERS_PER_SECOND);
 
             drivetrain = new Drivetrain(gyro, flModule, frModule, blModule, brModule);
-            new Pneumatics(new PneumaticsIORev());
-            new Vision(new VisionIOPhotonVision(CAMERA_NAME));
+            // new Pneumatics(new PneumaticsIORev());
+            // new Vision(new VisionIOPhotonVision(CAMERA_NAME));
             break;
           }
         case ROBOT_SIMBOT:
@@ -235,7 +233,7 @@ public class RobotContainer {
     AUTO_EVENT_MAP.put("event1", Commands.print("passed marker 1"));
     AUTO_EVENT_MAP.put("event2", Commands.print("passed marker 2"));
 
-    // build auto path commands
+    // build auto path commands TODO: remove path planner
     List<PathPlannerTrajectory> auto1Paths =
         PathPlanner.loadPathGroup(
             "testPaths1",
