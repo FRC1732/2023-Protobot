@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.SPI;
 public class GyroIONavX implements GyroIO {
   private final AHRS gyro;
 
-  public GyroIONavX(int id) {
+  public GyroIONavX() {
     gyro = new AHRS(SPI.Port.kMXP, (byte) 200); // NavX connected over MXP
   }
 
