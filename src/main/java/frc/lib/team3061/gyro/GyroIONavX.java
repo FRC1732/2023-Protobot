@@ -4,21 +4,21 @@
 
 package frc.lib.team3061.gyro;
 
-import static frc.robot.Constants.*;
+import com.kauailabs.navx.frc.AHRS;
+
+import edu.wpi.first.wpilibj.SPI;
 
 public class GyroIONavX implements GyroIO {
-  // private final Pigeon2 gyro;
-  private final double[] xyzDps = new double[3];
+  private final AHRS gyro;
 
   public GyroIONavX(int id) {
-    // gyro = new NavX(id, CAN_BUS_NAME); FIXME: fix
+    gyro = new AHRS(SPI.Port.kMXP, (byte) 200); // NavX connected over MXP
   }
 
   @Override
   public void updateInputs(GyroIOInputs inputs) {
-    // gyro.getRawGyro(xyzDps);
-    // inputs.connected = gyro.getLastError().equals(ErrorCode.OK);
-    // inputs.positionDeg = gyro.getYaw(); // degrees
-    // inputs.velocityDegPerSec = xyzDps[2]; // degrees per second
+    inputs.connected = gyro.isConnected();
+    inputs.positionDeg = gyro.getYaw(); // degrees
+    inputs.velocityDegPerSec = gyro.getRate(); // degrees per second
   }
 }
