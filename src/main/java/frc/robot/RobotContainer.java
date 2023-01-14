@@ -67,7 +67,7 @@ public class RobotContainer {
     // create real, simulated, or replay subsystems based on the mode and robot specified
     if (Constants.getMode() != Mode.REPLAY) {
       switch (Constants.getRobot()) {
-        case ROBOT_2022_PRESEASON:
+        case ROBOT_2023_PRESEASON:
           {
             GyroIO gyro = new GyroIOPigeon2(PIGEON_ID);
 
