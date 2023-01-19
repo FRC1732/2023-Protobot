@@ -50,7 +50,7 @@ public class OISelector {
         return new SingleHandheldOI(port);
       }
     }
-    
+
     return new OperatorInterface() {};
 
     /*Integer firstPort = null;

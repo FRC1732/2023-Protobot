@@ -54,9 +54,9 @@ public class SwerveModuleIOTalonFX implements SwerveModuleIO {
     this.feedForward = new SimpleMotorFeedforward(DRIVE_KS, DRIVE_KV, DRIVE_KA);
 
     // FIXME: Sus...I don't think this works on the Canivore
-    //CANDeviceFinder can = new CANDeviceFinder();
-    //can.isDevicePresent(CANDeviceType.TALON, driveMotorID, "Mod " + moduleNumber + "-Drive");
-    //can.isDevicePresent(CANDeviceType.TALON, angleMotorID, "Mod " + moduleNumber + "-Angle");
+    // CANDeviceFinder can = new CANDeviceFinder();
+    // can.isDevicePresent(CANDeviceType.TALON, driveMotorID, "Mod " + moduleNumber + "-Drive");
+    // can.isDevicePresent(CANDeviceType.TALON, angleMotorID, "Mod " + moduleNumber + "-Angle");
     // check for the CANcoder on the CAN bus when supported by CANDeviceFinder
 
     configAngleEncoder(canCoderID);
