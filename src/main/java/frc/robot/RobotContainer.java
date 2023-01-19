@@ -61,7 +61,7 @@ public class RobotContainer {
   private static RobotContainer robotContainer = new RobotContainer();
 
   /** Create the container for the robot. Contains subsystems, OI devices, and commands. */
-  public RobotContainer() {
+  public RobotContainer() { // TODO: put robot txt file on protobot
     // create real, simulated, or replay subsystems based on the mode and robot
     // specified
     if (Constants.getMode() != Mode.REPLAY) {
