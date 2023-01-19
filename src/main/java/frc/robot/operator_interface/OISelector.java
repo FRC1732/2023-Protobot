@@ -45,7 +45,15 @@ public class OISelector {
    * joysticks.
    */
   public static OperatorInterface findOperatorInterface() {
-    Integer firstPort = null;
+    for (int port = 0; port < DriverStation.kJoystickPorts; port++) {
+      if (!DriverStation.getJoystickName(port).equals("")) {
+        return new SingleHandheldOI(port);
+      }
+    }
+    
+    return new OperatorInterface() {};
+
+    /*Integer firstPort = null;
     Integer secondPort = null;
     Integer xBoxPort = null;
     for (int port = 0; port < DriverStation.kJoystickPorts; port++) {
@@ -74,6 +82,6 @@ public class OISelector {
       noOperatorInterfaceWarning.set(true);
       nonCompetitionOperatorInterfaceWarning.set(false);
       return new OperatorInterface() {};
-    }
+    }*/
   }
 }
