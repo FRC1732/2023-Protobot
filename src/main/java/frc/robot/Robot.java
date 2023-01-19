@@ -66,7 +66,7 @@ public class Robot extends LoggedRobot {
 
     switch (Constants.getMode()) {
       case REAL:
-        logger.addDataReceiver(new WPILOGWriter("/media/sda1"));
+        logger.addDataReceiver(new WPILOGWriter("/media/sda"));
 
         // Provide log data over the network, viewable in Advantage Scope.
         logger.addDataReceiver(new NT4Publisher());
