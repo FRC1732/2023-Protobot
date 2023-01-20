@@ -264,7 +264,7 @@ public class Drivetrain extends SubsystemBase {
         if (isFieldRelative) {
           chassisSpeeds =
               ChassisSpeeds.fromFieldRelativeSpeeds(
-                  xVelocity, yVelocity, rotationalVelocity, getRotation());
+                  xVelocity * TRAINING_WHEELS, yVelocity * TRAINING_WHEELS, rotationalVelocity, getRotation());
 
         } else {
           chassisSpeeds = new ChassisSpeeds(xVelocity, yVelocity, rotationalVelocity);

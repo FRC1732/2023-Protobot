@@ -14,6 +14,8 @@ public final class DrivetrainConstants {
     throw new IllegalStateException(CONSTRUCTOR_EXCEPTION);
   }
 
+  public static final double TRAINING_WHEELS = 1.00;
+
   // FIXME: update all CAN IDs (done for proto bot)
   // FIXME: update all steer offsets
   public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 40;
