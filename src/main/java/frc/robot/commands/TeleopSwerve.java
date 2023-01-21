@@ -51,7 +51,8 @@ public class TeleopSwerve extends CommandBase {
   @Override
   public void execute() {
 
-    // invert the controller input and apply the deadband and squaring to make the robot more
+    // invert the controller input and apply the deadband and squaring to make the
+    // robot more
     // responsive to small changes in the controller
     double xPercentage = modifyAxis(translationXSupplier.getAsDouble());
     double yPercentage = modifyAxis(translationYSupplier.getAsDouble());
@@ -92,7 +93,7 @@ public class TeleopSwerve extends CommandBase {
 
     // Square the axis
     value = Math.copySign(value * value, value);
-
+    value *= DrivetrainConstants.TRAINING_WHEELS;
     return value;
   }
 

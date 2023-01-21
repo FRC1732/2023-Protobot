@@ -14,14 +14,14 @@ public final class DrivetrainConstants {
     throw new IllegalStateException(CONSTRUCTOR_EXCEPTION);
   }
 
-  public static final double TRAINING_WHEELS = 1.00;
+  public static final double TRAINING_WHEELS = 0.2;
 
   // FIXME: update all CAN IDs (done for proto bot)
   // FIXME: update all steer offsets
   public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 40;
   public static final int FRONT_LEFT_MODULE_STEER_MOTOR = 41;
   public static final int FRONT_LEFT_MODULE_STEER_ENCODER = 42;
-  public static final double FRONT_LEFT_MODULE_STEER_OFFSET = 276.4160+180;
+  public static final double FRONT_LEFT_MODULE_STEER_OFFSET = 276.4160 + 180;
 
   public static final int FRONT_RIGHT_MODULE_DRIVE_MOTOR = 30;
   public static final int FRONT_RIGHT_MODULE_STEER_MOTOR = 31;
@@ -31,12 +31,12 @@ public final class DrivetrainConstants {
   public static final int BACK_LEFT_MODULE_DRIVE_MOTOR = 10;
   public static final int BACK_LEFT_MODULE_STEER_MOTOR = 11;
   public static final int BACK_LEFT_MODULE_STEER_ENCODER = 12;
-  public static final double BACK_LEFT_MODULE_STEER_OFFSET = 222.2754+180;
+  public static final double BACK_LEFT_MODULE_STEER_OFFSET = 222.2754 + 180;
 
   public static final int BACK_RIGHT_MODULE_DRIVE_MOTOR = 20;
   public static final int BACK_RIGHT_MODULE_STEER_MOTOR = 21;
   public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 22;
-  public static final double BACK_RIGHT_MODULE_STEER_OFFSET = 226.9336+180;
+  public static final double BACK_RIGHT_MODULE_STEER_OFFSET = 226.9336 + 180;
 
   public static final int PIGEON_ID = 18; // FIXME: change to nav x
 
