@@ -16,8 +16,6 @@ import com.ctre.phoenix.sensors.SensorTimeBase;
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 import edu.wpi.first.math.geometry.Rotation2d;
 import frc.lib.team254.drivers.TalonFXFactory;
-import frc.lib.team3061.util.CANDeviceFinder;
-import frc.lib.team3061.util.CANDeviceId.CANDeviceType;
 import frc.lib.team6328.util.TunableNumber;
 
 /**
@@ -55,9 +53,10 @@ public class SwerveModuleIOTalonFX implements SwerveModuleIO {
 
     this.feedForward = new SimpleMotorFeedforward(DRIVE_KS, DRIVE_KV, DRIVE_KA);
 
-    CANDeviceFinder can = new CANDeviceFinder();
-    can.isDevicePresent(CANDeviceType.TALON, driveMotorID, "Mod " + moduleNumber + "Drive");
-    can.isDevicePresent(CANDeviceType.TALON, angleMotorID, "Mod " + moduleNumber + "Angle");
+    // FIXME: Sus...I don't think this works on the Canivore
+    // CANDeviceFinder can = new CANDeviceFinder();
+    // can.isDevicePresent(CANDeviceType.TALON, driveMotorID, "Mod " + moduleNumber + "-Drive");
+    // can.isDevicePresent(CANDeviceType.TALON, angleMotorID, "Mod " + moduleNumber + "-Angle");
     // check for the CANcoder on the CAN bus when supported by CANDeviceFinder
 
     configAngleEncoder(canCoderID);
