@@ -119,7 +119,7 @@ public class Drivetrain extends SubsystemBase {
 
     this.zeroGyroscope();
 
-    this.isFieldRelative = false;
+    this.isFieldRelative = true; //TODO: toggle as nescessary
 
     this.gyroOffset = 0;
 
@@ -276,8 +276,6 @@ public class Drivetrain extends SubsystemBase {
             .recordOutput("Drivetrain/chassisSpeedVy", chassisSpeeds.vyMetersPerSecond);
         Logger.getInstance()
             .recordOutput("Drivetrain/chassisSpeedVo", chassisSpeeds.omegaRadiansPerSecond);
-        Logger.getInstance()
-            .recordOutput("Drivetrain/poseData", estimatedPoseWithoutGyro); //Odomentry tab
         SwerveModuleState[] swerveModuleStates =
             KINEMATICS.toSwerveModuleStates(chassisSpeeds, centerGravity);
         SwerveDriveKinematics.desaturateWheelSpeeds(
