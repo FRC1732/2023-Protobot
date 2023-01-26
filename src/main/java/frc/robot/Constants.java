@@ -26,8 +26,6 @@ public final class Constants {
 
   public static final boolean TUNING_MODE = false;
 
-  // FIXME: an empty string uses the default CAN bus; specify the name of the CANivore as
-  // appropriate
   public static final String CAN_BUS_NAME = "po";
 
   // FIXME: specify the name of the camera used for detecting AprilTags

@@ -16,8 +16,6 @@ public final class DrivetrainConstants {
 
   public static final double TRAINING_WHEELS = 0.2;
 
-  // FIXME: update all CAN IDs (done for proto bot)
-  // FIXME: update all steer offsets
   public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 40;
   public static final int FRONT_LEFT_MODULE_STEER_MOTOR = 41;
   public static final int FRONT_LEFT_MODULE_STEER_ENCODER = 42;
