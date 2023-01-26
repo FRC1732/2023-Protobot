@@ -45,23 +45,11 @@ public class OISelector {
    * joysticks.
    */
   public static OperatorInterface findOperatorInterface() {
+
+    Integer firstPort = null;
+    Integer secondPort = null;
     for (int port = 0; port < DriverStation.kJoystickPorts; port++) {
       if (!DriverStation.getJoystickName(port).equals("")) {
-        return new SingleHandheldOI(port);
-      }
-    }
-
-    return new OperatorInterface() {};
-
-    /*Integer firstPort = null;
-    Integer secondPort = null;
-    Integer xBoxPort = null;
-    for (int port = 0; port < DriverStation.kJoystickPorts; port++) {
-      if (DriverStation.getJoystickName(port).toLowerCase().contains("xbox")) {
-        if (xBoxPort == null) {
-          xBoxPort = port;
-        }
-      } else if (!DriverStation.getJoystickName(port).equals("")) {
         if (firstPort == null) {
           firstPort = port;
         } else if (secondPort == null) {
@@ -74,14 +62,14 @@ public class OISelector {
       noOperatorInterfaceWarning.set(false);
       nonCompetitionOperatorInterfaceWarning.set(false);
       return new DualJoysticksOI(firstPort, secondPort);
-    } else if (xBoxPort != null) {
+    } else if (firstPort != null) {
       noOperatorInterfaceWarning.set(false);
       nonCompetitionOperatorInterfaceWarning.set(true);
-      return new SingleHandheldOI(xBoxPort);
+      return new SingleHandheldOI(firstPort);
     } else {
       noOperatorInterfaceWarning.set(true);
       nonCompetitionOperatorInterfaceWarning.set(false);
       return new OperatorInterface() {};
-    }*/
+    }
   }
 }
