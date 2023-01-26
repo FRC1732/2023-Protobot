@@ -17,7 +17,7 @@ public class GyroIONavX implements GyroIO {
   @Override
   public void updateInputs(GyroIOInputs inputs) {
     inputs.connected = gyro.isConnected();
-    inputs.positionDeg = gyro.getYaw(); // degrees
+    inputs.positionDeg = gyro.getYaw() * -1; // degrees
     inputs.velocityDegPerSec = gyro.getRate(); // degrees per second
   }
 }

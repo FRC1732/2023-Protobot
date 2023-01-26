@@ -6,7 +6,6 @@ package frc.robot.subsystems.drivetrain;
 
 import static frc.robot.subsystems.drivetrain.DrivetrainConstants.*;
 
-import com.fasterxml.jackson.annotation.JacksonInject.Value;
 import com.pathplanner.lib.PathPlannerTrajectory.PathPlannerState;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
@@ -119,7 +118,7 @@ public class Drivetrain extends SubsystemBase {
 
     this.zeroGyroscope();
 
-    this.isFieldRelative = true; //TODO: toggle as nescessary
+    this.isFieldRelative = true; // TODO: toggle as nescessary
 
     this.gyroOffset = 0;
 
@@ -285,7 +284,7 @@ public class Drivetrain extends SubsystemBase {
           swerveModule.setDesiredState(
               swerveModuleStates[swerveModule.getModuleNumber()], true, false);
         }
-        Logger.getInstance() //Swerve tab
+        Logger.getInstance() // Swerve tab
             .recordOutput("Drivetrain/swerveModuleStates", swerveModuleStates);
         break;
 
