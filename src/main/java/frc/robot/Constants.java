@@ -26,7 +26,7 @@ public final class Constants {
 
   public static final boolean TUNING_MODE = false;
 
-  public static final String CAN_BUS_NAME = "po";
+  public static final String CAN_BUS_NAME = "Oogway";
 
   // FIXME: specify the name of the camera used for detecting AprilTags
   public static final String CAMERA_NAME = "ov9268";
