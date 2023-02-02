@@ -52,8 +52,10 @@ public class OISelector {
       if (!DriverStation.getJoystickName(port).equals("")) {
         if (firstPort == null) {
           firstPort = port;
+          System.out.println("port1 =" + port);
         } else if (secondPort == null) {
           secondPort = port;
+          System.out.println("port2 =" + port);
         }
       }
     }
