@@ -35,6 +35,7 @@ import frc.robot.commands.FollowPath;
 import frc.robot.commands.TeleopSwerve;
 import frc.robot.operator_interface.OISelector;
 import frc.robot.operator_interface.OperatorInterface;
+import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.drivetrain.Drivetrain;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ public class RobotContainer {
   private OperatorInterface oi = new OperatorInterface() {};
 
   private Drivetrain drivetrain;
-
+  private IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
   // use AdvantageKit's LoggedDashboardChooser instead of SendableChooser to
   // ensure accurate logging
   private final LoggedDashboardChooser<Command> autoChooser =
@@ -235,6 +236,9 @@ public class RobotContainer {
     // x-stance
     oi.getXStanceButton().onTrue(Commands.runOnce(drivetrain::enableXstance, drivetrain));
     oi.getXStanceButton().onFalse(Commands.runOnce(drivetrain::disableXstance, drivetrain));
+
+    oi.getIntakeButton().onTrue(Commands.runOnce(intakeSubsystem::on, intakeSubsystem));
+    oi.getIntakeButton().onFalse(Commands.runOnce(intakeSubsystem::off, intakeSubsystem));
   }
 
   /** Use this method to define your commands for autonomous mode. */
