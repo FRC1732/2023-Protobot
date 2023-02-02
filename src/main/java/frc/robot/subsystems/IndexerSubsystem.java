@@ -8,13 +8,13 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-
-public class IntakeSubsystem extends SubsystemBase {
+/* 
+public class IndexerSubsystem extends SubsystemBase {
   private CANSparkMax motorController;
 
-  /** Creates a new IntakeSubsystem. */
-  public IntakeSubsystem() {
-    motorController = new CANSparkMax(Constants.INTAKE_CAN_ID, MotorType.kBrushed);
+  // Creates a new IntakeSubsystem. 
+  public IndexerSubsystem() {
+    motorController = new CANSparkMax(50, MotorType.kBrushed);
   }
 
   @Override
@@ -23,10 +23,10 @@ public class IntakeSubsystem extends SubsystemBase {
   }
 
   public void on() {
-    motorController.set(-1.00);
+    motorController.set(0.2);
   }
 
   public void off() {
     motorController.set(0);
   }
-}
+} */
