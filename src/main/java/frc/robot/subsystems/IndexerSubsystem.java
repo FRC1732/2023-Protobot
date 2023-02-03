@@ -6,15 +6,23 @@ package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-/* 
+
 public class IndexerSubsystem extends SubsystemBase {
-  private CANSparkMax motorController;
+  private CANSparkMax indexerRotationMotor;
+  private CANSparkMax indexerGrabbingMotor;
+  private Solenoid indexerSolenoid;
 
   // Creates a new IntakeSubsystem. 
   public IndexerSubsystem() {
-    motorController = new CANSparkMax(50, MotorType.kBrushed);
+    indexerRotationMotor = new CANSparkMax(Constants.INDEXER_ROTATION_CAN_ID, MotorType.kBrushless);
+    indexerGrabbingMotor = new CANSparkMax(Constants.INDEXER_GRABBER_CAN_ID, MotorType.kBrushless);
+
+    indexerSolenoid = new Solenoid(Constants.CAN_PNEUMATIC_ID, PneumaticsModuleType.REVPH, 0);
   }
 
   @Override
@@ -22,11 +30,35 @@ public class IndexerSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void on() {
-    motorController.set(0.2);
+  public void grabberOn() {
+    indexerGrabbingMotor.set(0.2);
   }
 
-  public void off() {
-    motorController.set(0);
+  public void grabberOff() {
+    indexerGrabbingMotor.set(0);
   }
-} */
+
+  public void grabberEject() {
+    indexerGrabbingMotor.set(0);
+  }
+
+  public void rotateUp() {
+    indexerRotationMotor.set(0.2);
+  }
+
+  public void rotateDown() {
+    indexerRotationMotor.set(0.2);
+  }
+
+  public void rotationOff() {
+    indexerRotationMotor.set(0);
+  }
+
+  public void open() {
+    indexerSolenoid.set(true);
+  }
+
+  public void close() {
+    indexerSolenoid.set(false);
+  }
+} 
