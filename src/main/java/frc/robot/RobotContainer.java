@@ -35,6 +35,7 @@ import frc.robot.commands.FollowPath;
 import frc.robot.commands.TeleopSwerve;
 import frc.robot.operator_interface.OISelector;
 import frc.robot.operator_interface.OperatorInterface;
+import frc.robot.subsystems.IndexerSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.drivetrain.Drivetrain;
 import java.io.IOException;
@@ -53,6 +54,7 @@ public class RobotContainer {
 
   private Drivetrain drivetrain;
   private IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+  private IndexerSubsystem indexerSubsystem = new IndexerSubsystem();
   // use AdvantageKit's LoggedDashboardChooser instead of SendableChooser to
   // ensure accurate logging
   private final LoggedDashboardChooser<Command> autoChooser =
@@ -237,8 +239,27 @@ public class RobotContainer {
     oi.getXStanceButton().onTrue(Commands.runOnce(drivetrain::enableXstance, drivetrain));
     oi.getXStanceButton().onFalse(Commands.runOnce(drivetrain::disableXstance, drivetrain));
 
+    // Intake buttons
     oi.getIntakeButton().onTrue(Commands.runOnce(intakeSubsystem::on, intakeSubsystem));
     oi.getIntakeButton().onFalse(Commands.runOnce(intakeSubsystem::off, intakeSubsystem));
+
+    // Indexer buttons
+    oi.getGrabberButton().onTrue(Commands.runOnce(indexerSubsystem::grabberOn, indexerSubsystem));
+    oi.getGrabberButton().onFalse(Commands.runOnce(indexerSubsystem::grabberOff, indexerSubsystem));
+    
+    oi.getGrabberEjectButton().onTrue(Commands.runOnce(indexerSubsystem::grabberEject, indexerSubsystem));
+    oi.getGrabberEjectButton().onFalse(Commands.runOnce(indexerSubsystem::grabberOff, indexerSubsystem));
+    
+    oi.getIndexerRotateUpButton().onTrue(Commands.runOnce(indexerSubsystem::rotateUp, indexerSubsystem));
+    oi.getIndexerRotateUpButton().onTrue(Commands.runOnce(indexerSubsystem::rotateOff, indexerSubsystem));
+
+    oi.getIndexerRotateDownButton().onTrue(Commands.runOnce(indexerSubsystem::rotateDown, indexerSubsystem));
+    oi.getIndexerRotateDownButton().onTrue(Commands.runOnce(indexerSubsystem::rotateOff, indexerSubsystem));
+    
+    oi.getIndexerOpenButton().onTrue(Commands.runOnce(indexerSubsystem::open, indexerSubsystem));
+    
+    oi.getIndexerCloseButton().onTrue(Commands.runOnce(indexerSubsystem::close, indexerSubsystem));
+
   }
 
   /** Use this method to define your commands for autonomous mode. */

@@ -29,4 +29,8 @@ public class IntakeSubsystem extends SubsystemBase {
   public void off() {
     motorController.set(0);
   }
+
+  public void eject() {
+    motorController.set(1.00);
+  }
 }

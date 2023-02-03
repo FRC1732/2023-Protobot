@@ -40,4 +40,29 @@ public interface OperatorInterface {
   public default Trigger getIntakeButton() {
     return new Trigger(() -> false);
   }
+
+  public default Trigger getGrabberButton() {
+    return new Trigger(() -> false);
+  }
+
+  public default Trigger getGrabberEjectButton() {
+    return new Trigger(() -> false);
+  }
+
+  public default Trigger getIndexerRotateUpButton() {
+    return new Trigger(() -> false);
+  }
+
+  public default Trigger getIndexerRotateDownButton() {
+    return new Trigger(() -> false);
+  }
+
+
+  public default Trigger getIndexerOpenButton() {
+    return new Trigger(() -> false);
+  }
+
+  public default Trigger getIndexerCloseButton() {
+    return new Trigger(() -> false);
+  }
 }
