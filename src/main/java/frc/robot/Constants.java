@@ -30,7 +30,7 @@ public final class Constants {
 
   public static final int CAN_PNEUMATIC_ID = 5; //FIXME: get correct can id
 
-  public static final int INDEXER_SOLENOID_ID = 0; //FIXME: get correct can id
+  public static final int INDEXER_SOLENOID_ID = 5; //FIXME: get correct can id
 
   public static final int INTAKE_CAN_ID = 50;
 
