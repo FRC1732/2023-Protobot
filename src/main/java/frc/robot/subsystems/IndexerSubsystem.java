@@ -31,7 +31,7 @@ public class IndexerSubsystem extends SubsystemBase {
   }
 
   public void grabberOn() {
-    indexerGrabbingMotor.set(0.2);
+    indexerGrabbingMotor.set(0.5);
   }
 
   public void grabberOff() {
@@ -39,7 +39,7 @@ public class IndexerSubsystem extends SubsystemBase {
   }
 
   public void grabberEject() {
-    indexerGrabbingMotor.set(-0.2);
+    indexerGrabbingMotor.set(-0.5);
   }
 
   public void rotateUp() {

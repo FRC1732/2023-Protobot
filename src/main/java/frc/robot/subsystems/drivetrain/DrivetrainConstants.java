@@ -14,7 +14,7 @@ public final class DrivetrainConstants {
     throw new IllegalStateException(CONSTRUCTOR_EXCEPTION);
   }
 
-  public static final double TRAINING_WHEELS = 0.2;
+  public static final double TRAINING_WHEELS = 0.75;
 
   public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 40;
   public static final int FRONT_LEFT_MODULE_STEER_MOTOR = 41;
@@ -96,7 +96,7 @@ public final class DrivetrainConstants {
    * <p>This is a measure of how fast the robot can rotate in place.
    */
   public static final double MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND =
-      MAX_VELOCITY_METERS_PER_SECOND / Math.hypot(TRACKWIDTH_METERS / 2.0, WHEELBASE_METERS / 2.0);
+      MAX_VELOCITY_METERS_PER_SECOND / Math.hypot(TRACKWIDTH_METERS / 2.0, WHEELBASE_METERS / 2.0 ) / 2.0;
 
   public static final double MAX_COAST_VELOCITY_METERS_PER_SECOND = 0.05;
 
