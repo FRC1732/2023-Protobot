@@ -34,7 +34,7 @@ public final class DrivetrainConstants {
   public static final int BACK_RIGHT_MODULE_DRIVE_MOTOR = 20;
   public static final int BACK_RIGHT_MODULE_STEER_MOTOR = 21;
   public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 22;
-  public static final double BACK_RIGHT_MODULE_STEER_OFFSET = 74.7;
+  public static final double BACK_RIGHT_MODULE_STEER_OFFSET = 74.7-48.954+47.901;
 
   public static final int PIGEON_ID = 18; // FIXME: change to nav x
 
