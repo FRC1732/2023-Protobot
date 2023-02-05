@@ -46,7 +46,7 @@ public class DualJoysticksOI implements OperatorInterface {
 
   @Override
   public Trigger getFieldRelativeButton() {
-    return translateJoystickButtons[3];
+    return translateJoystickButtons[6];
   }
 
   @Override
@@ -86,7 +86,7 @@ public class DualJoysticksOI implements OperatorInterface {
 
   @Override
   public Trigger getIndexerOpenButton() {
-    return rotateJoystickButtons[2];
+    return translateJoystickButtons[2];
   }
 
   @Override
