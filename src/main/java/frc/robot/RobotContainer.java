@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.lib.team3061.gyro.GyroIO;
 import frc.lib.team3061.gyro.GyroIONavX;
+import frc.lib.team3061.gyro.GyroIoADIS16470;
 import frc.lib.team3061.pneumatics.Pneumatics;
 import frc.lib.team3061.pneumatics.PneumaticsIO;
 import frc.lib.team3061.swerve.SwerveModule;
@@ -71,7 +72,7 @@ public class RobotContainer {
       switch (Constants.getRobot()) {
         case ROBOT_2023_PRESEASON:
           {
-            GyroIO gyro = new GyroIONavX();
+            GyroIO gyro = new GyroIoADIS16470();
 
             SwerveModule flModule =
                 new SwerveModule(
