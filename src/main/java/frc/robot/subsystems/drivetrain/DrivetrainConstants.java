@@ -14,7 +14,7 @@ public final class DrivetrainConstants {
     throw new IllegalStateException(CONSTRUCTOR_EXCEPTION);
   }
 
-  public static final double TRAINING_WHEELS = 0.75;
+  public static final double TRAINING_WHEELS = 0.25;
 
   public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 40;
   public static final int FRONT_LEFT_MODULE_STEER_MOTOR = 41;
