@@ -245,17 +245,21 @@ public class RobotContainer {
     oi.getIntakeButton().onFalse(Commands.runOnce(intakeSubsystem::off, intakeSubsystem));
 
     // Indexer buttons
-    oi.getGrabberButton().onTrue(Commands.runOnce(indexerSubsystem::grabberOn, indexerSubsystem));
+    oi.getGrabberButton().onTrue(Commands.runOnce(indexerSubsystem::open, indexerSubsystem)
+                                .andThen(Commands.runOnce(indexerSubsystem::grabberEject, indexerSubsystem)));
     oi.getGrabberButton().onFalse(Commands.runOnce(indexerSubsystem::grabberOff, indexerSubsystem));
     
-    oi.getGrabberEjectButton().onTrue(Commands.runOnce(indexerSubsystem::grabberEject, indexerSubsystem));
-    oi.getGrabberEjectButton().onFalse(Commands.runOnce(indexerSubsystem::grabberOff, indexerSubsystem));
+    oi.getGrabberEjectButton().onTrue(Commands.runOnce(indexerSubsystem::close, indexerSubsystem)
+                                .andThen(Commands.runOnce(indexerSubsystem::grabberOn, indexerSubsystem))
+                                .andThen(Commands.runOnce(intakeSubsystem::on, intakeSubsystem)));
+    oi.getGrabberEjectButton().onFalse(Commands.runOnce(indexerSubsystem::grabberOff, indexerSubsystem)
+                                .andThen(Commands.runOnce(intakeSubsystem::off, intakeSubsystem)));
     
     oi.getIndexerRotateUpButton().onTrue(Commands.runOnce(indexerSubsystem::rotateUp, indexerSubsystem));
-    oi.getIndexerRotateUpButton().onTrue(Commands.runOnce(indexerSubsystem::rotateOff, indexerSubsystem));
+    oi.getIndexerRotateUpButton().onFalse(Commands.runOnce(indexerSubsystem::rotateOff, indexerSubsystem));
 
     oi.getIndexerRotateDownButton().onTrue(Commands.runOnce(indexerSubsystem::rotateDown, indexerSubsystem));
-    oi.getIndexerRotateDownButton().onTrue(Commands.runOnce(indexerSubsystem::rotateOff, indexerSubsystem));
+    oi.getIndexerRotateDownButton().onFalse(Commands.runOnce(indexerSubsystem::rotateOff, indexerSubsystem));
     
     oi.getIndexerOpenButton().onTrue(Commands.runOnce(indexerSubsystem::open, indexerSubsystem));
     

@@ -23,7 +23,7 @@ public class IntakeSubsystem extends SubsystemBase {
   }
 
   public void on() {
-    motorController.set(-0.50);
+    motorController.set(-0.375);
   }
 
   public void off() {

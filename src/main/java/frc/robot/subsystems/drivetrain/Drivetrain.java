@@ -118,7 +118,7 @@ public class Drivetrain extends SubsystemBase {
 
     this.zeroGyroscope();
 
-    this.isFieldRelative = false; // TODO: toggle as nescessary
+    this.isFieldRelative = true; // TODO: toggle as nescessary
 
     this.gyroOffset = 0;
 
