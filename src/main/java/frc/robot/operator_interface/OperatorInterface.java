@@ -41,7 +41,11 @@ public interface OperatorInterface {
     return new Trigger(() -> false);
   }
 
-  public default Trigger getGrabberButton() {
+  public default Trigger getGrabberCubeButton() {
+    return new Trigger(() -> false);
+  }
+
+  public default Trigger getGrabberConeButton() {
     return new Trigger(() -> false);
   }
 

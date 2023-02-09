@@ -65,12 +65,12 @@ public class DualJoysticksOI implements OperatorInterface {
   }
 
   @Override
-  public Trigger getGrabberButton() {
+  public Trigger getGrabberCubeButton() {
     return rotateJoystickButtons[4];
   }
 
   @Override
-  public Trigger getGrabberEjectButton() {
+  public Trigger getGrabberConeButton() {
     return rotateJoystickButtons[5];
   }
 
@@ -82,6 +82,11 @@ public class DualJoysticksOI implements OperatorInterface {
   @Override
   public Trigger getIndexerRotateDownButton() {
     return translateJoystickButtons[5];
+  }
+
+  @Override
+  public Trigger getGrabberEjectButton() {
+    return rotateJoystickButtons[2];
   }
 
   @Override

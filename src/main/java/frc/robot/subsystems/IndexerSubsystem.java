@@ -16,6 +16,7 @@ public class IndexerSubsystem extends SubsystemBase {
   private CANSparkMax indexerRotationMotor;
   private CANSparkMax indexerGrabbingMotor;
   private Solenoid indexerSolenoid;
+  boolean IsOpen = true;
 
   // Creates a new IntakeSubsystem. 
   public IndexerSubsystem() {
@@ -56,9 +57,19 @@ public class IndexerSubsystem extends SubsystemBase {
 
   public void open() {
     indexerSolenoid.set(true);
+    IsOpen = true;
   }
 
   public void close() {
     indexerSolenoid.set(false);
+    IsOpen = false;
+  }
+
+  public void eject() {
+    if(IsOpen) {
+      indexerGrabbingMotor.set(0.50);
+    } else {
+      indexerGrabbingMotor.set(-0.50);
+    }
   }
 } 
