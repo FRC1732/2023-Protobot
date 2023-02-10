@@ -91,7 +91,7 @@ public class DualJoysticksOI implements OperatorInterface {
 
   @Override
   public Trigger getIndexerOpenButton() {
-    return translateJoystickButtons[2];
+    return translateJoystickButtons[7];
   }
 
   @Override

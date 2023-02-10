@@ -67,9 +67,9 @@ public class IndexerSubsystem extends SubsystemBase {
 
   public void eject() {
     if(IsOpen) {
-      indexerGrabbingMotor.set(0.50);
+      indexerGrabbingMotor.set(1.00);
     } else {
-      indexerGrabbingMotor.set(-0.50);
+      indexerGrabbingMotor.set(-1.00);
     }
   }
 } 
