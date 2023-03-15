@@ -28,6 +28,9 @@ public final class Constants {
 
   public static final String CAN_BUS_NAME = "po";
 
+  public static final int CAN_PNEUMATICS_ID = 60;
+  public static final int SOLENOID_ID = 0;
+
   // FIXME: specify the name of the camera used for detecting AprilTags
   public static final String CAMERA_NAME = "ov9268";
 

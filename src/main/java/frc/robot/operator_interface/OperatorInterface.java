@@ -33,6 +33,10 @@ public interface OperatorInterface {
     return new Trigger(() -> false);
   }
 
+  public default Trigger getPneumaticsButton() {
+    return new Trigger(() -> false);
+  }
+
   public default Trigger getXStanceButton() {
     return new Trigger(() -> false);
   }

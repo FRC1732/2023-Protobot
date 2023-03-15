@@ -10,6 +10,8 @@ import com.pathplanner.lib.PathPlanner;
 import com.pathplanner.lib.PathPlannerTrajectory;
 import com.pathplanner.lib.commands.FollowPathWithEvents;
 import edu.wpi.first.apriltag.AprilTagFieldLayout;
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -51,6 +53,7 @@ public class RobotContainer {
   private OperatorInterface oi = new OperatorInterface() {};
 
   private Drivetrain drivetrain;
+  private PneumaticsSubsystem pneumaticsSubsystem;
   // use AdvantageKit's LoggedDashboardChooser instead of SendableChooser to
   // ensure accurate logging
   private final LoggedDashboardChooser<Command> autoChooser =
@@ -63,6 +66,9 @@ public class RobotContainer {
   public RobotContainer() {
     // create real, simulated, or replay subsystems based on the mode and robot
     // specified
+    pneumaticsSubsystem = new PneumaticsSubsystem();
+    Compressor compressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+    compressor.enableDigital();
     if (Constants.getMode() != Mode.REPLAY) {
       switch (Constants.getRobot()) {
         case ROBOT_2023_PRESEASON:
@@ -234,6 +240,9 @@ public class RobotContainer {
     // x-stance
     oi.getXStanceButton().onTrue(Commands.runOnce(drivetrain::enableXstance, drivetrain));
     oi.getXStanceButton().onFalse(Commands.runOnce(drivetrain::disableXstance, drivetrain));
+
+    oi.getPneumaticsButton()
+        .onTrue(Commands.runOnce(pneumaticsSubsystem::toggle, pneumaticsSubsystem));
   }
 
   /** Use this method to define your commands for autonomous mode. */
